@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-to-Image Search</title>
+    <!-- Include W3.CSS and Font Awesome -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='image-styles.css') }}">
+</head>
+<body>
+    <section class="upload-section">
+        <div class="w3-container">
+            <!-- Home Button with Link -->
+            <a href="{{ url_for('home') }}">
+                <button class="w3-button">
+                    <i class="fa fa-home"></i>
+                </button>
+            </a>
+        </div>
+
+        <form action="{{ url_for('image_to_image') }}" method="get">
+            <input type="text" name="imgid" placeholder="Type your image ID here" class="search-input" value="{{ query or '' }}">
+            <button type="submit" class="search-button">SEARCH</button>
+        </form>
+    </section>
+
+    <div class="image-display" id="image-display">
+        {% if data.pagefile %}
+            {% for img in data.pagefile %}
+                <div class="image-item">
+                    <img src="{{ url_for('get_img', fpath=img.imgpath) }}" alt="{{ query }}">
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No images found. Please enter a valid image ID.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

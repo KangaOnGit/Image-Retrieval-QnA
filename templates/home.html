@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ho Chi Minh AI Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home-styles.css') }}">
+</head>
+<body>
+    <div class="top-section">
+        <h1>Ho Chi Minh AI Challenge</h1>
+        <h2>Theme: Image Retrieval</h2>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/home-image.png') }}" alt="AI Challenge Theme Image">
+        </div>
+    </div>
+    <div class="bottom-section">
+        <div class="buttons">
+            <!-- Use url_for to dynamically generate the URLs for the routes -->
+            <a href="{{ url_for('text_to_image') }}">
+                <button class="text-image-button">Text &rarr; Image</button>
+            </a>
+            <a href="{{ url_for('image_to_image') }}">
+                <button class="image-image-button">ID &rarr; Image</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
