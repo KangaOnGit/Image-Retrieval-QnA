@@ -1,2 +1,3 @@
 # Image-Retrieval-QnA
-Made using CLIP
+
+## Trying out VQA (Visual-Question Answering)
