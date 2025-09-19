@@ -1,3 +1,5 @@
-# Image-Retrieval-QnA
+# Image-Retrieval-QnA (HCMC AI Challenge 2024-Group B)
 
-## Trying out VQA (Visual-Question Answering)
+- Clone the whole repository
+- pip install -r requirements.txt
+- Run app.py
